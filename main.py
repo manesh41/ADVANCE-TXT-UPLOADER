@@ -1,5 +1,5 @@
-# Don't Remove Credit Tg - @ytbr_67
-# Ask Doubt on telegram @ytbr_67
+# Don't Remove Credit Tg - @Skillhub_1_bot
+# Ask Doubt on telegram @Skillhub_1_bot
 
 import os
 import re
@@ -51,7 +51,7 @@ db = mongo_client[DB_NAME]
 premium_collection = db[COLLECTION_NAME]
 
 # Logging channel
-LOG_CHANNEL = -1001234567890  # Replace with your actual log channel ID
+LOG_CHANNEL = -1002519881903  # Replace with your actual log channel ID
 
 cookies_file_path = os.getenv("COOKIES_FILE_PATH", "youtube_cookies.txt")
 
@@ -64,12 +64,12 @@ async def show_random_emojis(message):
     return emoji_message
     
 # Define the owner's user ID
-OWNER_ID = 6103594386  # Replace with the actual owner's user ID
+OWNER_ID = 1753094696  # Replace with the actual owner's user ID
 
 # List of sudo users (initially empty or pre-populated)
 SUDO_USERS = [6103594386, 7545056722, 5854926266]
 
-AUTH_CHANNEL = -1002572301679
+AUTH_CHANNEL = -1002597379584
 
 # Premium system functions
 def is_premium_user(user_id: int) -> bool:
@@ -233,7 +233,7 @@ random_image_url = random.choice(image_urls)
 caption = (
         "**ʜᴇʟʟᴏ👋**\n\n"
         "➠ **ɪ ᴀᴍ ᴛxᴛ ᴛᴏ ᴠɪᴅᴇᴏ ᴜᴘʟᴏᴀᴅᴇʀ ʙᴏᴛ.**\n"
-        "➠ **ғᴏʀ ᴜsᴇ ᴍᴇ sᴇɴᴅ /gaurav.\n"
+        "➠ **ғᴏʀ ᴜsᴇ ᴍᴇ sᴇɴᴅ /skillhub.\n"
         "➠ **ғᴏʀ ɢᴜɪᴅᴇ sᴇɴᴅ /help."
 )
     
@@ -373,7 +373,7 @@ async def edit_txt(client, message: Message):
     try:
         await message.reply_document(
             document=final_file_path,
-            caption="📥**𝗘𝗱𝗶𝘁𝗲𝗱 𝗕𝘆 ➤ Gaurav**"
+            caption="📥**𝗘𝗱𝗶𝘁𝗲𝗱 𝗕𝘆 ➤ skillhub"
         )
         await log_to_channel(bot, f"#TXT_EDITED\nBy: {message.from_user.id}")
     except Exception as e:
@@ -447,7 +447,7 @@ async def ytplaylist_to_txt(client: Client, message: Message):
         file_name = save_to_file(videos, title)
         await message.reply_document(
             document=file_name, 
-            caption=f"`{title}`\n\n📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆 ➤ Gaurav"
+            caption=f"`{title}`\n\n📥 𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆 ➤ skillhub"
         )
         await log_to_channel(bot, f"#YT2TXT\nURL: {youtube_url}\nBy: {message.from_user.id}")
         os.remove(file_name)
@@ -468,12 +468,12 @@ async def list_users(client: Client, msg: Message):
 async def help_command(client: Client, msg: Message):
     help_text = (
         "`/start` - Start the bot⚡\n\n"
-        "`/gaurav` - Download and upload files (sudo)🎬\n\n"
+        "`/skillhub` - Download and upload files (sudo)🎬\n\n"
         "`/restart` - Restart the bot🔮\n\n" 
         "`/stop` - Stop ongoing process🛑\n\n"
         "`/cookies` - Upload cookies file🍪\n\n"
         "`/e2t` - Edit txt file📝\n\n"
-        "`/yt2txt` - Create txt of yt playlist (owner)🗃️\n\n"
+        "`/swgtxt` - Create txt of yt playlist (owner)🗃️\n\n"
         "`/sudo add` - Add user or group or channel (owner)🎊\n\n"
         "`/sudo remove` - Remove user or group or channel (owner)❌\n\n"
         "`/userlist` - List of sudo user or group or channel📜\n\n"
@@ -484,7 +484,7 @@ async def help_command(client: Client, msg: Message):
     await msg.reply_text(help_text)
 
 # Upload command handler - Renamed from tushar to gaurav
-@bot.on_message(filters.command(["gaurav"]))
+@bot.on_message(filters.command(["skillhub"]))
 async def upload(bot: Client, m: Message):
     if not is_authorized(m.chat.id):
         await m.reply_text("**🚫You are not authorized to use this bot.**")
@@ -568,9 +568,9 @@ async def upload(bot: Client, m: Message):
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
-    credit = "️[Gaurav](https://t.me/ytbr_67)"
+    credit = "️[skillhub](https://t.me/skillhub_courses)"
     if raw_text3 == '1':
-        CR = '[Gaurav](https://t.me/ytbr_67)'
+        CR = '[skillhub](https://t.me/skillhub_courses)'
     elif raw_text3:
         try:
             text, link = raw_text3.split(',')
@@ -807,7 +807,7 @@ async def upload(bot: Client, m: Message):
                 else:
                     emoji_message = await show_random_emojis(message)
                     remaining_links = len(links) - count
-                    Show = f"**🍁 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗𝗜𝗡𝗚 🍁**\n\n**📝ɴᴀᴍᴇ » ** `{name}\n\n🔗ᴛᴏᴛᴀʟ ᴜʀʟ » {len(links)}\n\n🗂️ɪɴᴅᴇx » {str(count)}/{len(links)}\n\n🌐ʀᴇᴍᴀɪɴɪɴɢ ᴜʀʟ » {remaining_links}\n\n❄ǫᴜᴀʟɪᴛʏ » {res}`\n\n**🔗ᴜʀʟ » ** `{url}`\n\n🤖𝗕𝗢𝗧 𝗠𝗔𝗗𝗘 𝗕𝗬 ➤ 𝗚𝗔𝗨𝗥𝗔𝗩\n\n🙂 चलो फिर से अजनबी बन जायें 🙂"
+                    Show = f"**🍁 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗𝗜𝗡𝗚 🍁**\n\n**📝ɴᴀᴍᴇ » ** `{name}\n\n🔗ᴛᴏᴛᴀʟ ᴜʀʟ » {len(links)}\n\n🗂️ɪɴᴅᴇx » {str(count)}/{len(links)}\n\n🌐ʀᴇᴍᴀɪɴɪɴɢ ᴜʀʟ » {remaining_links}\n\n❄ǫᴜᴀʟɪᴛʏ » {res}`\n\n**🔗ᴜʀʟ » ** `{url}`\n\n🤖𝗕𝗢𝗧 𝗠𝗔𝗗𝗘 𝗕𝗬 ➤ SKILLHUB\n\n🙂 चलो फिर से अजनबी बन जायें 🙂"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
